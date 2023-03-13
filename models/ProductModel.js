@@ -53,7 +53,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please select a category for this product'],
         enum: {
-            values: ['Bookcases and shelves', 'Dining Tables', 'Shoes Racks', 'Sofas', 'Chairs', 'Single Beds', 'Double Beds', 'Study Tables', 'TV & Media Units', 'Kitchen & Decor', 'Dining Sets', 'Wardrobes', 'Outdoors'],
+            values: ['Bookcases and shelves', 'Dining Tables', 'Shoes Racks', 'Sofas', 'Chairs', 'Single Beds', 'Double Beds', 'Study Tables', 'TV and Media Units', 'Kitchen and Decor', 'Dining Sets', 'Wardrobes', 'Outdoors'],
             message: 'Please select correct category for this product'
         }
     },

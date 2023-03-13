@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const cloudinary = require('cloudinary')
 const cors = require('cors');
 app.use(cors());
+app.get("/",(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.send("API is Running....");
+})
 dotenv.config({ path: 'backend/.env' })
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
