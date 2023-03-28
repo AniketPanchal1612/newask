@@ -9,7 +9,7 @@ const cloudinary = require('cloudinary');
 //register a user ==> api/v2/register
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     
-    const result = await cloudinary.v2.uploader.upload(req.body.avatar,{
+    const result = await cloudinary.v2.uploader.upload(req.body.avatar,{  
         folder: 'ask_avatars',
         width: 150,
         crop:"scale"
@@ -142,7 +142,7 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
 //get currently logged in user  ==> /api/v1/me
 exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
     const user = await UserModel.findById(req.user.id);
-    // console.log(user)
+    console.log(user)
     res.status(200).json({
         success: true,
         user
