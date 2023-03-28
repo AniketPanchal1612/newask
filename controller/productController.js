@@ -46,7 +46,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
 //Get all products => /api/v1/products
 exports.getProducts = async (req, res, next) => {
-
+    console.log("Products")
     const resPerPage = 25
     const productsCount = await ProductModel.countDocuments() // total num of products
     const apiFeatures = new APIFeatures(ProductModel.find(), req.query).search().filter().pagination(resPerPage)
