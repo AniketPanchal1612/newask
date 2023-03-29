@@ -141,7 +141,7 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
 
 //get currently logged in user  ==> /api/v1/me
 exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
-    console.log("object")
+    console.log(req.user.id)
     const user = await UserModel.findById(req.user.id);
     console.log(user)
     res.status(200).json({
