@@ -3,7 +3,13 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary')
 const cors = require('cors');
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+    origin: 'https://askfurniture.in',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 app.get("/",(req,res)=>{
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.send("API is Running....");

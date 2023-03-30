@@ -79,12 +79,8 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     user.password = req.body.password;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
-
     await user.save();
-
     sendToken(user, 200, res);
-
-
 })
 
 //forgot password =>/api/v1/password/forgot
@@ -126,6 +122,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
     }
 
 })
+
 exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
     res.cookie('token', null, {
         expires: new Date(Date.now()),
